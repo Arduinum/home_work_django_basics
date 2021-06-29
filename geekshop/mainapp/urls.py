@@ -1,6 +1,8 @@
 from django.urls import path
 from .views import products
 
+app_name = 'products'  # имя для приложения
+
 urlpatterns = [
-    path('', products),
+    path('', products, name='index'),
 ]

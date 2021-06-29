@@ -1,0 +1,15 @@
+<div class="header clearfix">
+    <a href="{% url 'index' %}" class="logo"></a>
+    <ul class="menu">
+        <li><a href="{% url 'index' %}" class="{% if  title|title == 'Магазин'%}active{% endif %}">домой</a></li>
+        <!-- с namespace -->
+        <li><a href="{% url 'products:index' %}"
+                class="{% if  title|title == 'Продукты/Каталог'%}active{% endif %}">продукты</a>
+        </li>
+        <li><a href="{% url 'contacts' %}" class="{% if  title|title == 'Контакты'%}active{% endif %}">контакты</a></li>
+    </ul>
+    <a href="#" class="search"></a>
+    {% if title|title != "Магазин" %}
+    <a href="#" class="basket"></a>
+    {% endif %}
+</div>

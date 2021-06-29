@@ -2,8 +2,17 @@ from django.shortcuts import render
 
 
 def index(request):  # request - словарь прилетающий на сервак
-    return render(request, 'index.html')  # рендерим нашу html
+    title = 'магазин'
+    context = {
+        'title': title
+    }
+    # рендерим нашу html
+    return render(request, 'geekshop/index.html', context=context)
 
 
 def contacts(request):
-    return render(request, 'contact.html')
+    title = 'контакты'
+    context = {
+        'title': title
+    }
+    return render(request=request, template_name='geekshop/contact.html', context=context)

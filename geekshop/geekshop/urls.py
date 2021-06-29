@@ -19,8 +19,9 @@ from .views import index, contacts  # импорт функций из view ко
 
 urlpatterns = [
     path('admin/', admin.site.urls),
-    path('', index),  # для index.html
-    path('contacts/', contacts),
+    path('', index, name='index'),  # для index.html
+    # name='contacts' - промаркеровали
+    path('contacts/', contacts, name='contacts'),
     # подключили url из другого приложения
-    path('products/', include('mainapp.urls')),
+    path('products/', include('mainapp.urls', namespace='products')),
 ]
