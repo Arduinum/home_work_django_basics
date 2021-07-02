@@ -16,6 +16,9 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from .views import index, contacts  # импорт функций из view контроллеров
+# импорт для медиаданных
+from django.conf import settings
+from django.conf.urls.static import static
 
 urlpatterns = [
     path('admin/', admin.site.urls),
@@ -25,3 +28,6 @@ urlpatterns = [
     # подключили url из другого приложения
     path('products/', include('mainapp.urls', namespace='products')),
 ]
+# для медиаданных
+if settings.DEBUG:
+    urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
