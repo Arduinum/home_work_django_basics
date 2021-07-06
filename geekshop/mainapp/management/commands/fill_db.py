@@ -1,11 +1,13 @@
 import os
 import json
 
-from django.contrib.auth.models import User # модель чтоб создать user
+# from django.contrib.auth.models import User # модель чтоб создать user
 from django.core.management.base import BaseCommand # класс который создаёт механику команд
 
-from authapp.models import ShopUser
+
 from mainapp.models import ProductCategory, Product
+from authapp.models import ShopUser
+
 
 JSON_PATH = 'mainapp/jsons' # путь до json
 
@@ -20,7 +22,7 @@ class Command(BaseCommand):
     def handle(self, *args, **options):
         categories = load_from_json('categories')
 
-        ProductCategory.ojects.all().delete() # почистили нашу модель
+        ProductCategory.objects.all().delete() # почистили нашу модель
         for category in categories:
             new_category = ProductCategory(**category) # ** - распаковка
             new_category.save() # сораняем изменения в таблице
@@ -30,10 +32,11 @@ class Command(BaseCommand):
         Product.objects.all().delete()
         for product in products:
             category_name = product['category']
-            _category = ProductCategory.ojects.get(name=category_name)
+            _category = ProductCategory.objects.get(name=category_name)
             product['category'] = _category
             new_category = Product(**product)
             new_category.save()
         
         # создаём пользователя
         super_user = ShopUser.objects.create_superuser('admin', 'admin@geekshop.local', '123', age='30')
+        
