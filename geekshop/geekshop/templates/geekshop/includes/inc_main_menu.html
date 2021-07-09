@@ -23,7 +23,9 @@
             </li>
     </ul>
     <a href="#" class="search"></a>
-    {% if title|title != "Магазин" %}
-    <a href="#" class="basket"></a>
-    {% endif %}
+    <a href="{% url 'basket:view' %}" class="basket">
+        <span>
+            {% if basket %} {{ basket|length }} {% endif %}
+        </span>
+    </a>
 </div>

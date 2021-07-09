@@ -27,6 +27,7 @@ urlpatterns = [
     path('contacts/', contacts, name='contacts'),
     # подключили url из другого приложения
     path('products/', include('mainapp.urls', namespace='products')),
+    path('basket/', include('basketapp.urls', namespace='basket')),
     path('auth/', include('authapp.urls', namespace='auth')),
 ]
 # для медиаданных
