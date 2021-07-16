@@ -13,14 +13,15 @@ class ProductCategory(models.Model):
         verbose_name='описание', 
         blank=True
     )
-
+    # автоматом ставит дату создания
     created = models.DateTimeField(
         auto_now_add=True
     ) 
-    # автоматом ставит дату создания
+    # дата обновления записи
     updated = models.DateTimeField(
         auto_now=True
-    ) # дата обновления записи
+    ) 
+    is_deleted = models.BooleanField(default=False)
 
     # не делать makemigrations и migrate (редактирование ниже)
     # переопределили метод (будет указано название категории продукта)

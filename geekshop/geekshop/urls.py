@@ -21,7 +21,10 @@ from django.conf import settings
 from django.conf.urls.static import static
 
 urlpatterns = [
+    # техническая админка
     path('admin/', admin.site.urls),
+    # админка для пользователей
+    path('admin_staff/', include('adminapp.urls', namespace='admin_staff')),
     path('', index, name='index'),  # для index.html
     # name='contacts' - промаркеровали
     path('contacts/', contacts, name='contacts'),

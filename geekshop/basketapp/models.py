@@ -22,6 +22,8 @@ class Basket(models.Model):
         verbose_name='время',
         auto_now_add=True,
     )
+    is_deleted = models.BooleanField(default=False)
+    
     # цена продукта
     @property # используем метод как свойство
     def product_cost(self):
