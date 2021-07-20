@@ -95,6 +95,7 @@ html, body {
 	display: block;
 	clear: both;
 }
+
 .text-slider {
 	margin-top: 288px;
 	position: absolute;
@@ -261,10 +262,14 @@ html, body {
 	justify-content: space-between;
 	margin-bottom: 120px;
 }
-.tab-content .block {
+.tab-content .block{
 	height: 270px;
 	width: 270px;
 	position: relative;
+}
+.tab-content .img-product{
+	height: 270px;
+	width: 270px;
 }
 .tab-content a .text {
 	display: none;
@@ -563,16 +568,16 @@ html, body {
     right: 50px;
     color: #6c6c6c;
 }
-.text-footer {
+._text-footer {
 	margin-top: 120px;
 	width: 221px;
 	float: left;
 	margin-right: 68px;
 }
-.text-footer:last-child {
+._text-footer:last-child {
 	margin-right: 0;
 }
-.text-footer h3 {
+._text-footer h3 {
 	text-transform: uppercase; 
 	color:  #6c6c6c;
 	font-size: 18px;
@@ -581,7 +586,7 @@ html, body {
 	margin-bottom: 22px;
 	letter-spacing: 2px;
 }
-.text-footer p {
+._text-footer p {
 	color:  #212121;
 	font-size: 14px;/* Приближение из-за подстановки шрифтов */
 	font-weight: 300;
@@ -589,7 +594,7 @@ html, body {
 	text-align: left;
 	margin-bottom: 20px;
 }
-.text-footer a {
+._text-footer a {
 	text-decoration: none;
 	text-transform: uppercase;
 	color:  #212121;
@@ -598,10 +603,10 @@ html, body {
 	line-height: 26px;
 	text-align: left;
 }
-.text-footer a:hover {
+._text-footer a:hover {
 	border-bottom: 2px solid #212121;
 }
-.text-footer a:active {
+._text-footer a:active {
 	color: #6c6c6c;
 	border-bottom: 2px solid #6c6c6c;
 }
@@ -616,10 +621,10 @@ td:first-child {
 .text-footer:nth-child(2) {
 	width: 422px;
 }
-.text-footer:nth-child(3) {
+._text-footer:nth-child(3) {
 	width: 363px;
 }
-.text-footer input {
+._text-footer input {
 	border-width: 1px;
 	border-color:  #d9dee1;
 	border-style: solid;
@@ -635,7 +640,7 @@ td:first-child {
 	padding-left: 19px;
 	padding-right: 70px;
 }
-.text-footer input:focus {
+._text-footer input:focus {
 	border-width: 1px;
 	border-color:  #6c6c6c;
 	border-style: solid;
@@ -805,6 +810,7 @@ td:first-child {
 	width: 370px;
 	position: relative;
 }
+
 .products a .text {
 	display: none;
 	height: 368px;
