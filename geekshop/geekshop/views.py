@@ -6,14 +6,15 @@ def index(request):  # request - словарь прилетающий на се
     title = 'магазин'
     products = Product.objects.all()[:4]
     
-    basket = []
-    if request.user.is_authenticated:
-        basket = Basket.objects.filter(user=request.user)
+    # так как проверяем свой контекстный процессор
+    # basket = []
+    # if request.user.is_authenticated:
+    #     basket = Basket.objects.filter(user=request.user)
     
     context = {
         'title': title,
         'products': products,
-        'basket': basket
+        # 'basket': basket
     }
     # рендерим нашу html
     return render(request, 'geekshop/index.html', context=context)

@@ -69,6 +69,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'mainapp.context_processors.basket',
             ],
         },
     },
@@ -141,3 +142,23 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media') # путь до медиа данн
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 LOGIN_URL = '/auth/login/'
+
+DOMAIN_NAME = 'http://127.0.0.1:8000'
+
+# если оставить создаст tmp c логом
+# если вкл, то EMAIL_HOST = 'smtp.mailtrap.io' не прелетит смс
+# EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
+# EMAIL_FILE_PATH = 'tmp/messages'
+
+# EMAIL_HOST = 'localhost'
+# EMAIL_PORT = '25' # 25 - не безопасен!
+# EMAIL_HOST_USER = ''
+# EMAIL_HOST_PASSWORD = ''
+# EMAIL_HOST_USER, EMAIL_HOST_PASSWORD = None, None # for console
+# EMAIL_USE_SSL = False
+
+# эти настройки для тестирования отправки писем через онлайн сервис для тестов писем
+EMAIL_HOST = 'smtp.mailtrap.io'
+EMAIL_HOST_USER = '66de5cd983d7c0'
+EMAIL_HOST_PASSWORD = 'defcca1d06f51d'
+EMAIL_PORT = '2525'
