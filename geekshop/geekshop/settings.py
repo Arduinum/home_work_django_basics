@@ -12,6 +12,16 @@ https://docs.djangoproject.com/en/3.2/ref/settings/
 
 import os
 from pathlib import Path
+import json
+
+# импортируем виртуальное окружение
+import environ
+env = environ.Env()
+environ.Env.read_env()
+
+
+with open('geekshop/vk.json', 'r') as file:
+    VK = json.load(file)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -21,7 +31,8 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = 'django-insecure-s_pa=hp%kz0!)8ci3mh*2543jsa4-1-5#9*63s83bvd--=-wl%'
+SECRET_KEY = env('SECRET_KEY_VK') # получаем по имени переменной из .env
+# SECRET_KEY = VK['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -43,6 +54,8 @@ INSTALLED_APPS = [
     'authapp',
     'basketapp',
     'adminapp',
+
+    'social_django',
 ]
 
 MIDDLEWARE = [
@@ -162,3 +175,11 @@ EMAIL_HOST = 'smtp.mailtrap.io'
 EMAIL_HOST_USER = '66de5cd983d7c0'
 EMAIL_HOST_PASSWORD = 'defcca1d06f51d'
 EMAIL_PORT = '2525'
+
+AUTHENTICATION_BACKENDS = (
+    'django.contrib.auth.backends.ModelBackend',
+    'social_core.backends.vk.VKOAuth2',
+)
+
+SOCIAL_AUTH_VK_OAUTH2_KEY = VK['SOCIAL_AUTH_VK_OAUTH2_ID']
+SOCIAL_AUTH_VK_OAUTH2_SECRET = VK['SOCIAL_AUTH_VK_OAUTH2_KEY']
