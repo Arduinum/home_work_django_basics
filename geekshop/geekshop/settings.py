@@ -54,6 +54,7 @@ INSTALLED_APPS = [
     'authapp',
     'basketapp',
     'adminapp',
+    'ordersapp',
 
     'social_django',
 ]
@@ -193,8 +194,8 @@ DOMAIN_NAME = 'http://127.0.0.1:8000'
 
 # эти настройки для тестирования отправки писем через онлайн сервис для тестов писем
 EMAIL_HOST = 'smtp.mailtrap.io'
-EMAIL_HOST_USER = '66de5cd983d7c0'
-EMAIL_HOST_PASSWORD = 'defcca1d06f51d'
+EMAIL_HOST_USER = env('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = env('EMAIL_HOST_PASSWORD')
 EMAIL_PORT = '2525'
 
 AUTHENTICATION_BACKENDS = (

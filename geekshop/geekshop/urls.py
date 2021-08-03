@@ -31,6 +31,7 @@ urlpatterns = [
     # подключили url из другого приложения
     path('products/', include('mainapp.urls', namespace='products')),
     path('basket/', include('basketapp.urls', namespace='basket')),
+    path('order/', include('ordersapp.urls', namespace='order')),
     path('auth/', include('authapp.urls', namespace='auth')),
 
     path('', include('social_django.urls', namespace='social')),
