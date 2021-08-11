@@ -1,0 +1,101 @@
+[
+    {
+        "category": "Стулья",
+        "name": "Красный стул",
+        "image": "product_images/product-4.jpg",
+        "short_desc": "Красивый красный стул =)",
+        "description": "",
+        "price": "2300.00",
+        "quantity": 10
+    },
+    
+    {
+        "category": "Офис",
+        "name": "Лампа сфера",
+        "image": "product_images/product-1.jpg",
+        "short_desc": "Нежный ламповый свет",
+        "description": "",
+        "price": "4500.00",
+        "quantity": 23
+    },
+    
+    {
+        "category": "Классика",
+        "name": "Кресло из белой кожи",
+        "image": "product_images/product-21.jpg",
+        "short_desc": "Уникальный дизайн",
+        "description": "",
+        "price": "14500.00",
+        "quantity": 20
+    },
+    
+    {
+        "category": "Дом",
+        "name": "Серый диван",
+        "image": "product_images/product-3-sm.jpg",
+        "short_desc": "Мягкий и компактный диван",
+        "description": "",
+        "price": "10000.00",
+        "quantity": 7
+    },
+    
+    {
+        "category": "Модерн",
+        "name": "Чёрная настенная лампа",
+        "image": "product_images/product-41.jpg",
+        "short_desc": "Удобная и качественная лампа",
+        "description": "",
+        "price": "3000.00",
+        "quantity": 6
+    },
+
+    {
+        "category": "Стулья",
+        "name": "Синий стул",
+        "image": "product_images/product-2.jpg",
+        "short_desc": "Красивый синий стул =)",
+        "description": "",
+        "price": "2300.00",
+        "quantity": 10
+    },
+    
+    {
+        "category": "Офис",
+        "name": "Светильник настенный",
+        "image": "product_images/product-2-sm.jpg",
+        "short_desc": "Чёрный настенный",
+        "description": "",
+        "price": "5500.00",
+        "quantity": 25
+    },
+    
+    {
+        "category": "Классика",
+        "name": "Круглая ваза",
+        "image": "product_images/product-61.jpg",
+        "short_desc": "Стиль белый конус",
+        "description": "",
+        "price": "2500.00",
+        "quantity": 21
+    },
+    
+    {
+        "category": "Дом",
+        "name": "Серые часы",
+        "image": "product_images/product-4-sm.jpg",
+        "short_desc": "Стильные настенные часы",
+        "description": "",
+        "price": "1500.00",
+        "quantity": 9
+    },
+    
+    {
+        "category": "Модерн",
+        "name": "Чёрная лампа",
+        "image": "product_images/product-4.jpg",
+        "short_desc": "Чёрная настольная лампа",
+        "description": "",
+        "price": "3500.00",
+        "quantity": 11
+    }
+]
