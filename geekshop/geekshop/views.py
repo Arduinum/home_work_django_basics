@@ -5,7 +5,7 @@ from basketapp.models import Basket
 
 def index(request):  # request - словарь прилетающий на сервак
     title = 'магазин'
-    products = Product.objects.all()[:4]
+    products = Product.objects.filter(is_deleted=False, category__is_deleted=False)[:4]
 
     # так как проверяем свой контекстный процессор
     # basket = []
