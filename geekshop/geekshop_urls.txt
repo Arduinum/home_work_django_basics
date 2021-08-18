@@ -1,0 +1,8 @@
+http://176.99.12.55/products/
+http://176.99.12.55/products/category/1/
+http://176.99.12.55/products/category/3/
+http://176.99.12.55/products/category/1/page/1/
+http://176.99.12.55/products/category/3/page/2/
+http://176.99.12.55/products/product/1/
+http://176.99.12.55/products/product/2/
+http://176.99.12.55/products/product/3/
