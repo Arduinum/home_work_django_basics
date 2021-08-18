@@ -20,8 +20,8 @@ env = environ.Env()
 environ.Env.read_env()
 
 
-with open('geekshop/vk.json', 'r') as file:
-    VK = json.load(file)
+# with open('geekshop/vk.json', 'r') as file:
+#    VK = json.load(file)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -35,9 +35,12 @@ SECRET_KEY = env('SECRET_KEY_VK') # получаем по имени перем�
 # SECRET_KEY = VK['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
+# для разработки
+# на продкшн нужно выкл этого режима делать!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# с любого ip
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -49,7 +52,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
+
     'mainapp',
     'authapp',
     'basketapp',
@@ -116,10 +119,19 @@ WSGI_APPLICATION = 'geekshop.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# от сервака разработки
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.sqlite3',
+#         'NAME': BASE_DIR / 'db.sqlite3',
+#     }
+# }
+
 DATABASES = {
     'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': BASE_DIR / 'db.sqlite3',
+        'NAME': 'geekshop',
+        'ENGINE': 'django.db.backends.postgresql',
+        'USER': 'postgres',
     }
 }
 
@@ -161,6 +173,7 @@ USE_TZ = False  # использовать или нет таймзону
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'  # чтоб браузер нашёл статические файлы сервера
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # ищет статику через файлы
 STATICFILES_DIRS = (
@@ -203,5 +216,23 @@ AUTHENTICATION_BACKENDS = (
     'social_core.backends.vk.VKOAuth2',
 )
 
-SOCIAL_AUTH_VK_OAUTH2_KEY = VK['SOCIAL_AUTH_VK_OAUTH2_ID']
-SOCIAL_AUTH_VK_OAUTH2_SECRET = VK['SOCIAL_AUTH_VK_OAUTH2_KEY']
+# если храним секретные данные в файле vk.json
+# SOCIAL_AUTH_VK_OAUTH2_KEY = VK['SOCIAL_AUTH_VK_OAUTH2_ID']
+# SOCIAL_AUTH_VK_OAUTH2_SECRET = VK['SOCIAL_AUTH_VK_OAUTH2_KEY']
+
+# если сипользуем env
+SOCIAL_AUTH_VK_OAUTH2_KEY = env('SOCIAL_AUTH_VK_OAUTH2_ID')
+SOCIAL_AUTH_VK_OAUTH2_SECRET = env('SOCIAL_AUTH_VK_OAUTH2_KEY')
+
+if os.name == 'posix':
+    CACHE_MIDDLEWARE_ALIAS = 'default'
+    CACHE_MIDDLEWARE_SECONDS = 120
+    CACHE_MIDDLEWARE_KEY_PREFIX = 'geekshop'
+    CACHES = {
+        'default': {
+            'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+            'LOCATION': '127.0.0.1:11211',
+        }
+    }
+
+LOW_CACHE = False
