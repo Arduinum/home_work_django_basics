@@ -21,7 +21,7 @@ environ.Env.read_env()
 
 
 # with open('geekshop/vk.json', 'r') as file:
-#     VK = json.load(file)
+#    VK = json.load(file)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -36,10 +36,10 @@ SECRET_KEY = env('SECRET_KEY_VK') # получаем по имени перем�
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # для разработки
-# DEBUG = True
+# на продкшн нужно выкл этого режима делать!
+DEBUG = True
 
-DEBUG = False
-
+# с любого ip
 ALLOWED_HOSTS = ['*']
 
 
@@ -135,7 +135,6 @@ DATABASES = {
     }
 }
 
-
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
 
@@ -154,7 +153,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
@@ -165,6 +163,7 @@ TIME_ZONE = 'Europe/Moscow'
 USE_I18N = True
 
 USE_L10N = True
+
 USE_TZ = False  # использовать или нет таймзону
 
 
@@ -172,6 +171,7 @@ USE_TZ = False  # использовать или нет таймзону
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'  # чтоб браузер нашёл статические файлы сервера
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # ищет статику через файлы
 STATICFILES_DIRS = (
@@ -214,6 +214,23 @@ AUTHENTICATION_BACKENDS = (
     'social_core.backends.vk.VKOAuth2',
 )
 
+# если храним секретные данные в файле vk.json
 # SOCIAL_AUTH_VK_OAUTH2_KEY = VK['SOCIAL_AUTH_VK_OAUTH2_ID']
 # SOCIAL_AUTH_VK_OAUTH2_SECRET = VK['SOCIAL_AUTH_VK_OAUTH2_KEY']
 
+# если сипользуем env
+SOCIAL_AUTH_VK_OAUTH2_KEY = env('SOCIAL_AUTH_VK_OAUTH2_ID')
+SOCIAL_AUTH_VK_OAUTH2_SECRET = env('SOCIAL_AUTH_VK_OAUTH2_KEY')
+
+if os.name == 'posix':
+    CACHE_MIDDLEWARE_ALIAS = 'default'
+    CACHE_MIDDLEWARE_SECONDS = 120
+    CACHE_MIDDLEWARE_KEY_PREFIX = 'geekshop'
+    CACHES = {
+        'default': {
+            'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+            'LOCATION': '127.0.0.1:11211',
+        }
+    }
+
+LOW_CACHE = False

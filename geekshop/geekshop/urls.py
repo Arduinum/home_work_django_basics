@@ -38,9 +38,9 @@ urlpatterns = [
 ]
 
 if settings.DEBUG:
-    import debug_toolbar
+    # import debug_toolbar
 
-    # для дебаг панели в браузере
-    urlpatterns += [path('__debug__/', include(debug_toolbar.urls))]
+    # # для дебаг панели в браузере
+    # urlpatterns += [path('__debug__/', include(debug_toolbar.urls))]
     # для медиаданных
     urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
