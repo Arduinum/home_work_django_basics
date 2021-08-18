@@ -31,13 +31,16 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env('SECRET_KEY_VK') # получаем по имени переменной из .env
+SECRET_KEY = env('SECRET_KEY_VK')  # получаем по имени переменной из .env
 # SECRET_KEY = VK['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
+# для разработки
+# на продкшн нужно выкл этого режима делать!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+# с любого ip
+ALLOWED_HOSTS = ['*']
 
 
 # Application definition
@@ -49,7 +52,7 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    
+
     'mainapp',
     'authapp',
     'basketapp',
@@ -57,10 +60,6 @@ INSTALLED_APPS = [
     'ordersapp',
 
     'social_django',
-
-    'debug_toolbar',
-    'template_profiler_panel',
-    'django_extensions',
 ]
 
 MIDDLEWARE = [
@@ -71,8 +70,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'social_django.middleware.SocialAuthExceptionMiddleware',  # для продвинутого режима работы с вк
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
+    'social_django.middleware.SocialAuthExceptionMiddleware', # для продвинутого режима работы с вк
 ]
 
 ROOT_URLCONF = 'geekshop.urls'
@@ -207,6 +205,27 @@ AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',
     'social_core.backends.vk.VKOAuth2',
 )
+
+# если храним секретные данные в файле vk.json
+# SOCIAL_AUTH_VK_OAUTH2_KEY = VK['SOCIAL_AUTH_VK_OAUTH2_ID']
+# SOCIAL_AUTH_VK_OAUTH2_SECRET = VK['SOCIAL_AUTH_VK_OAUTH2_KEY']
+
+# если сипользуем env
+SOCIAL_AUTH_VK_OAUTH2_KEY = env('SOCIAL_AUTH_VK_OAUTH2_ID')
+SOCIAL_AUTH_VK_OAUTH2_SECRET = env('SOCIAL_AUTH_VK_OAUTH2_KEY')
+
+if os.name == 'posix':
+    CACHE_MIDDLEWARE_ALIAS = 'default'
+    CACHE_MIDDLEWARE_SECONDS = 120
+    CACHE_MIDDLEWARE_KEY_PREFIX = 'geekshop'
+    CACHES = {
+        'default': {
+            'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+            'LOCATION': '127.0.0.1:11211',
+        }
+    }
+
+LOW_CACHE = False
 
 # если храним секретные данные в файле vk.json
 # SOCIAL_AUTH_VK_OAUTH2_KEY = VK['SOCIAL_AUTH_VK_OAUTH2_ID']
