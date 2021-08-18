@@ -263,4 +263,4 @@ if os.name == 'posix':
         }
     }
 
-LOW_CACHE = False
+LOW_CACHE = True
