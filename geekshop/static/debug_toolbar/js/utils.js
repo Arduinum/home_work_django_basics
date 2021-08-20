@@ -7,6 +7,7 @@ const $$ = {
             }
         });
     },
+
     onPanelRender(root, panelId, fn) {
         /*
         This is a helper function to attach a handler for a `djdt.panel.render`
