@@ -22,8 +22,9 @@ sqlparse==0.4.1
 urllib3==1.26.6
 psycopg2-binary
 django-debug-toolbar
-django-debug-toolbar-template-profilerpip
+django-debug-toolbar-template-profiler
 django-extensions
 pydotplus
 graphviz
 locust
+python-memcached

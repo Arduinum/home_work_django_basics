@@ -74,7 +74,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'social_django.middleware.SocialAuthExceptionMiddleware', # для продвинутого режима работы с вк
+    'social_django.middleware.SocialAuthExceptionMiddleware',  # для продвинутого режима работы с вк
     'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
@@ -93,8 +93,8 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'mainapp.context_processors.basket',
-                'social_django.context_processors.backends', # для продвинутого режима работы с вк
-                'social_django.context_processors.login_redirect', # для продвинутого режима работы с вк
+                'social_django.context_processors.backends',  # для продвинутого режима работы с вк
+                'social_django.context_processors.login_redirect',  # для продвинутого режима работы с вк
             ],
         },
     },
