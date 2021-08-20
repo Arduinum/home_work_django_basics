@@ -15,7 +15,6 @@ $$.on(djDebug, "click", ".switchHistory", function (event) {
 
     ajaxForm(this).then(function (data) {
         djDebug.setAttribute("data-store-id", newStoreId);
-
         // Check if response is empty, it could be due to an expired store_id.
         if (Object.keys(data).length === 0) {
             const container = document.getElementById("djdtHistoryRequests");
@@ -39,7 +38,6 @@ $$.on(djDebug, "click", ".refreshHistory", function (event) {
     event.preventDefault();
     const container = document.getElementById("djdtHistoryRequests");
     ajaxForm(this).then(function (data) {
-
         // Remove existing rows first then re-populate with new data
         container
             .querySelectorAll("tr[data-store-id]")

@@ -132,7 +132,6 @@ WSGI_APPLICATION = 'geekshop.wsgi.application'
 #     }
 # }
 
-# от сервака продакшн
 DATABASES = {
     'default': {
         'NAME': 'geekshop',

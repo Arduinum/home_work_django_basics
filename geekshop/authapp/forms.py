@@ -34,7 +34,6 @@ class ShopUserRegisterForm(UserCreationForm):
             raise forms.ValidationError("Вы слишком молоды!")
 
         return data
-
     # переопределённый метод
     def save(self):
         user = super(ShopUserRegisterForm, self).save()
@@ -49,16 +48,12 @@ class ShopUserRegisterForm(UserCreationForm):
 class ShopUserEditForm(UserChangeForm):
     class Meta:
         model = ShopUser
-        fields = ('username', 'first_name', 'email', 'age', 'avatar', 'password', 'is_deleted', 'is_active', 'is_staff',
-                  'is_superuser')
+        fields = ('username', 'first_name', 'email', 'age', 'avatar', 'password')
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
         for field_name, field in self.fields.items():
-            if field_name == 'is_deleted' or field_name == 'is_active' or field_name == 'is_staff' or field_name == 'is_superuser':
-                field.widget.attrs['class'] = 'form-check-input mt-0'
-            else:
-                field.widget.attrs['class'] = 'form-control'
+            field.widget.attrs['class'] = 'form-control'
             field.help_text = ''
             if field_name == 'password':
                 field.widget = forms.HiddenInput()
