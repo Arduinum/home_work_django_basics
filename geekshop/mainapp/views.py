@@ -112,11 +112,11 @@ def products(request, pk=None, page=1):
     if pk is not None:
         if pk == 0:
             # попадут только неудалённые продукты
-            products = get_products_orederd_by_price()
+            products = products
             category = {'pk': 0, 'name': 'все'}
         else:
             category = get_category(pk)
-            products = get_products_orederd_by_price(pk)
+            products = get_products_in_category_orederd_by_price(pk)
 
         paginator = Paginator(products, 2)
 
