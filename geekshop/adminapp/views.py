@@ -1,5 +1,6 @@
+from django.db.models import F
 from django.http import HttpResponseRedirect, Http404
-from django.urls import reverse
+from django.urls import reverse, reverse_lazy
 
 from adminapp.forms import ShopUserAdminEditForm, ProductEditForm, ProductCategoryEditForm
 from authapp.forms import ShopUserRegisterForm
@@ -10,6 +11,10 @@ from django.contrib.auth.decorators import user_passes_test
 
 from django.views.generic.list import ListView
 from django.views.generic import CreateView, UpdateView
+
+from django.dispatch import receiver
+from django.db.models.signals import pre_save
+from django.db import connection
 
 
 # реализация на Function Based Views
@@ -74,6 +79,7 @@ class UserCreateView(CreateView):
         context['title'] = 'пользователи/создать'
 
         return context
+
 
 def user_update(request, pk):
     title = 'пользователи/редактирование'
@@ -179,6 +185,7 @@ def user_delete(request, pk):
 
 #     return render(request, 'adminapp/categories.html', context)
 
+
 class ProductCategoryListView(ListView):
     model = ProductCategory
     template_name = 'adminapp/categories.html'
@@ -193,6 +200,7 @@ class ProductCategoryListView(ListView):
 
     def get_queryset(self):
         return ProductCategory.objects.all().order_by('name')
+
 
 # def category_create(request):
 #     title = 'категории/создать'
@@ -229,25 +237,46 @@ class ProductCategoryCreateView(CreateView):
         return context
 
 
-def category_update(request, pk):
-    title = 'категории/редактирование'
-    edit_category = get_object_or_404(ProductCategory, pk=pk)
+# def category_update(request, pk):
+#     title = 'категории/редактирование'
+#     edit_category = get_object_or_404(ProductCategory, pk=pk)
+#
+#     if request.method == 'POST':
+#         edit_form = ProductCategoryEditForm(request.POST, request.FILES, instance=edit_category)
+#         if edit_form.is_valid():
+#             edit_form.save()
+#
+#             return HttpResponseRedirect(reverse('admin_staff:category_update', args=[edit_category.pk]))
+#     else:
+#         edit_form = ProductCategoryEditForm(instance=edit_category)
+#
+#     context = {
+#         'title': title,
+#         'category_form': edit_form,
+#     }
+#
+#     return render(request, 'adminapp/category_update.html', context)
 
-    if request.method == 'POST':
-        edit_form = ProductCategoryEditForm(request.POST, request.FILES, instance=edit_category)
-        if edit_form.is_valid():
-            edit_form.save()
 
-            return HttpResponseRedirect(reverse('admin_staff:category_update', args=[edit_category.pk]))
-    else:
-        edit_form = ProductCategoryEditForm(instance=edit_category)
+class ProductCategoryUpdateView(UpdateView):
+    model = ProductCategory
+    template_name = 'adminapp/category_update.html'
+    success_url = reverse_lazy('admin_staff:categories')
+    form_class = ProductCategoryEditForm
 
-    context = {
-        'title': title,
-        'category_form': edit_form,
-    }
+    def get_context_data(self, **kwargs):
+        context = super(ProductCategoryUpdateView, self).get_context_data(**kwargs)
+        context['title'] = 'категории/редактирование'
+        return context
 
-    return render(request, 'adminapp/category_update.html', context)
+    def form_valid(self, form):
+        if 'discount' in form.cleaned_data:
+            discount = form.cleaned_data['discount']
+            if discount:
+                self.object.product_set.update(price=F('price') * (1 - discount / 100))
+                db_profile_by_type(self.__class__, 'UPDATE', connection.queries)
+
+        return super().form_valid(form)
 
 
 def category_delete(request, pk):
@@ -354,3 +383,19 @@ def product_delete(request, pk):
     }
 
     return render(request, 'adminapp/product_delete.html', context)
+
+
+def db_profile_by_type(prefix, type, queries):
+    update_queries = list(filter(lambda x: type in x['sql'], queries))
+    print(f'db_profile {type} for {prefix}:')
+    [print(query['sql']) for query in update_queries]
+
+
+@receiver(pre_save, sender=ProductCategory)
+def product_is_active_update_productcategory_save(sender, instance, **kwargs):
+    if instance.pk:
+        instance.product_set.update(is_deleted=True)
+    else:
+        instance.product_set.update(is_deleted=False)
+
+    db_profile_by_type(sender, 'UPDATE', connection.queries)

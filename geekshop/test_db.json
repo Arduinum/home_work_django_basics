@@ -1,0 +1,396 @@
+[
+  {
+    "model": "sessions.session",
+    "pk": "c44aka32cl2fq69wfotsv6c9ykxp3tuu",
+    "fields": {
+      "session_data": ".eJxVjEEOwiAQRe_C2hCgwDAu3XsGMsAgVdMmpV0Z765NutDtf-_9l4i0rS1unZc4FnEWWpx-t0T5wdMOyp2m2yzzPK3LmOSuyIN2eZ0LPy-H-3fQqLdvnXRQ2pIPkF1BDcy-VusYFKnE1RqwMCCWXAihuiGgItRogjcKBlPF-wPYJTcv:1m5qBj:lC6c2q-x7Yc8qC2vKLdhqIPe_bZbZl7nEG1pzRg8cZQ",
+      "expire_date": "2021-08-03T16:53:35.642"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "l30ggik7tvbiky39l0j1jyv0inrh2vww",
+    "fields": {
+      "session_data": ".eJxVjEEOwiAQRe_C2hCgwDAu3XsGMsAgVdMmpV0Z765NutDtf-_9l4i0rS1unZc4FnEWWpx-t0T5wdMOyp2m2yzzPK3LmOSuyIN2eZ0LPy-H-3fQqLdvnXRQ2pIPkF1BDcy-VusYFKnE1RqwMCCWXAihuiGgItRogjcKBlPF-wPYJTcv:1mFvDI:oMi0SGBuuOH3lVso1Mr92MrXW_hR1iPiiLxxHSrG5h4",
+      "expire_date": "2021-08-31T12:16:52.649"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "q87p9foi2vht44u698qih5sjtpi3ae5z",
+    "fields": {
+      "session_data": ".eJxVjEEOwiAQRe_C2hCgwDAu3XsGMsAgVdMmpV0Z765NutDtf-_9l4i0rS1unZc4FnEWWpx-t0T5wdMOyp2m2yzzPK3LmOSuyIN2eZ0LPy-H-3fQqLdvnXRQ2pIPkF1BDcy-VusYFKnE1RqwMCCWXAihuiGgItRogjcKBlPF-wPYJTcv:1m43IJ:Vwi5qqG0qTc1KcNwONzv4ylrfCSmOKQgjeQAs2dvBw4",
+      "expire_date": "2021-07-29T18:28:59.049"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "tbkaerzt8302orumk569a7bc4h3kxwpx",
+    "fields": {
+      "session_data": ".eJxVjEEOwiAQRe_C2hCgwDAu3XsGMsAgVdMmpV0Z765NutDtf-_9l4i0rS1unZc4FnEWWpx-t0T5wdMOyp2m2yzzPK3LmOSuyIN2eZ0LPy-H-3fQqLdvnXRQ2pIPkF1BDcy-VusYFKnE1RqwMCCWXAihuiGgItRogjcKBlPF-wPYJTcv:1m4MPI:bqKD7m4bZgepdUsR4A3G5Yhgue7fJls68kMBZ9ZfR1U",
+      "expire_date": "2021-07-30T14:53:28.510"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "tiyig5q2vphh4hu27o5n31f2en0aog0a",
+    "fields": {
+      "session_data": ".eJxVjEEOwiAQRe_C2hCgwDAu3XsGMsAgVdMmpV0Z765NutDtf-_9l4i0rS1unZc4FnEWWpx-t0T5wdMOyp2m2yzzPK3LmOSuyIN2eZ0LPy-H-3fQqLdvnXRQ2pIPkF1BDcy-VusYFKnE1RqwMCCWXAihuiGgItRogjcKBlPF-wPYJTcv:1mHOv0:Hf92NUh3jsmH51zVKyseDGmGIQwFrQ5NnBwsG5OrvFc",
+      "expire_date": "2021-09-04T14:12:06.523"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "ujobb1dz48ltjchajqtkdtj1wun101zs",
+    "fields": {
+      "session_data": ".eJxVjEEOwiAQRe_C2hCgwDAu3XsGMsAgVdMmpV0Z765NutDtf-_9l4i0rS1unZc4FnEWWpx-t0T5wdMOyp2m2yzzPK3LmOSuyIN2eZ0LPy-H-3fQqLdvnXRQ2pIPkF1BDcy-VusYFKnE1RqwMCCWXAihuiGgItRogjcKBlPF-wPYJTcv:1mES28:0BldXV3k4R6ZG1HJ0sGrjvGCLNxOQplVZYud5Q4zCtc",
+      "expire_date": "2021-08-27T10:55:16.377"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "uzd3nyf1iu13h15ydv6vdalan464de9f",
+    "fields": {
+      "session_data": "eyJuZXh0IjoiLyIsInZrLW9hdXRoMl9zdGF0ZSI6IlZQdlc3SXV1TTR0QXVPZFdzNEp1Nk5lRjZBNGxCaDdZIn0:1m9nol:9Lz4rNca6ug_uPr0FKVl_N_viT3ElBB4oHD10hsPoks",
+      "expire_date": "2021-08-14T15:10:15.028"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "vluo4gb3myxr0tng039kirquy8qgzl8f",
+    "fields": {
+      "session_data": ".eJxVjEEOwiAQRe_C2hCgwDAu3XsGMsAgVdMmpV0Z765NutDtf-_9l4i0rS1unZc4FnEWWpx-t0T5wdMOyp2m2yzzPK3LmOSuyIN2eZ0LPy-H-3fQqLdvnXRQ2pIPkF1BDcy-VusYFKnE1RqwMCCWXAihuiGgItRogjcKBlPF-wPYJTcv:1mFvuf:w3Y_h1X-YE_-Iestsd2Oyp-NqBdQdY3BlwTQ8yKz_tY",
+      "expire_date": "2021-08-31T13:01:41.341"
+    }
+  },
+  {
+    "model": "sessions.session",
+    "pk": "yvd0kvubtdysuqa17ef0spkk07mjooiz",
+    "fields": {
+      "session_data": ".eJxVjEEOwiAQRe_C2hCgwDAu3XsGMsAgVdMmpV0Z765NutDtf-_9l4i0rS1unZc4FnEWWpx-t0T5wdMOyp2m2yzzPK3LmOSuyIN2eZ0LPy-H-3fQqLdvnXRQ2pIPkF1BDcy-VusYFKnE1RqwMCCWXAihuiGgItRogjcKBlPF-wPYJTcv:1m5qCA:K4W0jYrxxvU7oU4KRPUFwm7s1jYybjX98XoYK64Axt8",
+      "expire_date": "2021-08-03T16:54:02.782"
+    }
+  },
+  {
+    "model": "mainapp.productcategory",
+    "pk": 1,
+    "fields": {
+      "name": "Стулья",
+      "description": "клёвые стулья =)",
+      "created": "2021-07-06T17:09:41.993",
+      "updated": "2021-07-06T17:09:41.993",
+      "is_deleted": false
+    }
+  },
+  {
+    "model": "mainapp.productcategory",
+    "pk": 2,
+    "fields": {
+      "name": "Дом",
+      "description": "классные удобные вещи в дом",
+      "created": "2021-07-06T17:09:42.056",
+      "updated": "2021-07-06T17:09:42.056",
+      "is_deleted": false
+    }
+  },
+  {
+    "model": "mainapp.productcategory",
+    "pk": 3,
+    "fields": {
+      "name": "Офис",
+      "description": "стильные и практичные вещи в офис",
+      "created": "2021-07-06T17:09:42.131",
+      "updated": "2021-08-19T16:46:24.393",
+      "is_deleted": true
+    }
+  },
+  {
+    "model": "mainapp.productcategory",
+    "pk": 4,
+    "fields": {
+      "name": "Модерн",
+      "description": "для ценителей стиля",
+      "created": "2021-07-06T17:09:42.223",
+      "updated": "2021-07-06T17:09:42.223",
+      "is_deleted": false
+    }
+  },
+  {
+    "model": "mainapp.productcategory",
+    "pk": 5,
+    "fields": {
+      "name": "Классика",
+      "description": "для любителей классики жанра",
+      "created": "2021-07-06T17:09:42.314",
+      "updated": "2021-07-06T17:09:42.314",
+      "is_deleted": false
+    }
+  },
+  {
+    "model": "mainapp.productcategory",
+    "pk": 20,
+    "fields": {
+      "name": "test",
+      "description": "for test",
+      "created": "2021-08-21T14:14:21.315",
+      "updated": "2021-08-21T14:14:37.465",
+      "is_deleted": false
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 1,
+    "fields": {
+      "category": 1,
+      "name": "Красный стул",
+      "image": "product_images/product-2.jpg",
+      "short_desc": "Красивый красный стул",
+      "description": "Стул для детской комнаты",
+      "price": "2300.00",
+      "quantity": 15,
+      "created": "2021-07-06T17:09:42.412",
+      "updated": "2021-08-21T12:06:09.183",
+      "is_deleted": false
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 2,
+    "fields": {
+      "category": 3,
+      "name": "Лампа сфера",
+      "image": "product_images/product-1.jpg",
+      "short_desc": "Нежный ламповый свет",
+      "description": "Новаторский дизайн для дома и офиса",
+      "price": "4500.00",
+      "quantity": 0,
+      "created": "2021-07-06T17:09:42.508",
+      "updated": "2021-08-08T18:10:12.645",
+      "is_deleted": true
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 3,
+    "fields": {
+      "category": 5,
+      "name": "Кресло из белой кожи",
+      "image": "product_images/product-3.jpg",
+      "short_desc": "Уникальный дизайн",
+      "description": "Стиль и качество для дома",
+      "price": "14500.00",
+      "quantity": 26,
+      "created": "2021-07-06T17:09:42.592",
+      "updated": "2021-08-17T13:00:13.799",
+      "is_deleted": false
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 4,
+    "fields": {
+      "category": 2,
+      "name": "Серый диван",
+      "image": "product_images/product-4.jpg",
+      "short_desc": "Мягкий и компактный диван",
+      "description": "Мягкий и качественный",
+      "price": "10000.00",
+      "quantity": 16,
+      "created": "2021-07-06T17:09:42.675",
+      "updated": "2021-08-21T13:22:23.199",
+      "is_deleted": false
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 5,
+    "fields": {
+      "category": 4,
+      "name": "Чёрная настенная лампа",
+      "image": "product_images/product-5.jpg",
+      "short_desc": "Удобная и качественная лампа",
+      "description": "Нежно светит и стильно выглядит",
+      "price": "3000.00",
+      "quantity": 8,
+      "created": "2021-07-06T17:09:42.768",
+      "updated": "2021-08-17T13:00:13.780",
+      "is_deleted": false
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 6,
+    "fields": {
+      "category": 1,
+      "name": "Синий стул",
+      "image": "product_images/product-6.jpg",
+      "short_desc": "Красивый синий стул",
+      "description": "Стул в детскую комнату",
+      "price": "2300.00",
+      "quantity": 33,
+      "created": "2021-07-06T17:09:42.859",
+      "updated": "2021-08-22T18:31:43.657",
+      "is_deleted": false
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 7,
+    "fields": {
+      "category": 5,
+      "name": "Светильник настенный",
+      "image": "product_images/product-7.jpg",
+      "short_desc": "Чёрный настенный",
+      "description": "Для любителей классики",
+      "price": "5500.00",
+      "quantity": 25,
+      "created": "2021-07-06T17:09:42.950",
+      "updated": "2021-07-18T15:52:42.683",
+      "is_deleted": false
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 8,
+    "fields": {
+      "category": 5,
+      "name": "Круглая ваза",
+      "image": "product_images/product-8.jpg",
+      "short_desc": "Стиль белый конус",
+      "description": "Конусообразный дизайн как у греков в античный период",
+      "price": "2500.00",
+      "quantity": 21,
+      "created": "2021-07-06T17:09:43.059",
+      "updated": "2021-07-18T15:53:12.271",
+      "is_deleted": false
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 9,
+    "fields": {
+      "category": 2,
+      "name": "Серые часы",
+      "image": "product_images/product-9.jpg",
+      "short_desc": "Стильные настенные часы",
+      "description": "Стиль, качество и ничего лишнего",
+      "price": "1500.00",
+      "quantity": 20,
+      "created": "2021-07-06T17:09:43.142",
+      "updated": "2021-08-21T13:22:06.477",
+      "is_deleted": false
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 10,
+    "fields": {
+      "category": 4,
+      "name": "Чёрная лампа",
+      "image": "product_images/product-10.jpg",
+      "short_desc": "Чёрная настольная лампа",
+      "description": "Непревзойдённый стиль к вам домой",
+      "price": "3500.00",
+      "quantity": 34,
+      "created": "2021-07-06T17:09:43.251",
+      "updated": "2021-08-22T18:26:57.697",
+      "is_deleted": false
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 11,
+    "fields": {
+      "category": 2,
+      "name": "Белый светильник люстра",
+      "image": "product_images/product-11.jpg",
+      "short_desc": "Нежный ламповый свет",
+      "description": "С серым узором",
+      "price": "3500.00",
+      "quantity": 28,
+      "created": "2021-07-18T15:26:20.739",
+      "updated": "2021-08-22T18:31:43.685",
+      "is_deleted": false
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 12,
+    "fields": {
+      "category": 5,
+      "name": "Чёрная ступа",
+      "image": "product_images/product-12.jpg",
+      "short_desc": "Керамическая ступа",
+      "description": "Для толчения продуктов",
+      "price": "1500.00",
+      "quantity": 8,
+      "created": "2021-07-18T15:29:35.581",
+      "updated": "2021-08-06T15:15:03.954",
+      "is_deleted": false
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 13,
+    "fields": {
+      "category": 4,
+      "name": "Чёрный светильник",
+      "image": "product_images/product-13.jpg",
+      "short_desc": "Строгий чёрный дизайн",
+      "description": "Для любителей чёрных баров",
+      "price": "2700.00",
+      "quantity": 79,
+      "created": "2021-07-18T15:43:28.829",
+      "updated": "2021-08-17T12:57:28.962",
+      "is_deleted": false
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 14,
+    "fields": {
+      "category": 1,
+      "name": "Голубой стул",
+      "image": "product_images/product-14.jpg",
+      "short_desc": "Красивый голубой стул",
+      "description": "Голубой стул для детской комнаты",
+      "price": "3500.00",
+      "quantity": 38,
+      "created": "2021-07-18T15:44:46.360",
+      "updated": "2021-08-21T13:20:55.559",
+      "is_deleted": false
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 15,
+    "fields": {
+      "category": 3,
+      "name": "Красный офисный стул",
+      "image": "product_images/product-15.jpg",
+      "short_desc": "Элегантный стул в офис",
+      "description": "Стильный дизайн для офиса",
+      "price": "1600.00",
+      "quantity": 38,
+      "created": "2021-07-18T15:47:02.650",
+      "updated": "2021-08-17T12:20:33.471",
+      "is_deleted": true
+    }
+  },
+  {
+    "model": "mainapp.product",
+    "pk": 16,
+    "fields": {
+      "category": 2,
+      "name": "Кувшин для воды",
+      "image": "product_images/product-16.jpg",
+      "short_desc": "Красивый кувшин для воды",
+      "description": "Нежный белый цвет",
+      "price": "1200.00",
+      "quantity": 34,
+      "created": "2021-07-18T15:48:37.374",
+      "updated": "2021-08-22T18:26:57.695",
+      "is_deleted": false
+    }
+  }
+]

@@ -21,7 +21,7 @@ environ.Env.read_env()
 
 
 # with open('geekshop/vk.json', 'r') as file:
-#     VK = json.load(file)
+#    VK = json.load(file)
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -31,13 +31,13 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 # See https://docs.djangoproject.com/en/3.2/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = env('SECRET_KEY_VK')  # получаем по имени переменной из .env
+SECRET_KEY = env('SECRET_KEY_VK') # получаем по имени переменной из .env
 # SECRET_KEY = VK['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 # для разработки
 # на продкшн нужно выкл этого режима делать!
-DEBUG = True
+DEBUG = False
 
 # с любого ip
 ALLOWED_HOSTS = ['*']
@@ -60,6 +60,10 @@ INSTALLED_APPS = [
     'ordersapp',
 
     'social_django',
+
+    'debug_toolbar',
+    'template_profiler_panel',
+    'django_extensions',
 ]
 
 MIDDLEWARE = [
@@ -70,7 +74,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    'social_django.middleware.SocialAuthExceptionMiddleware', # для продвинутого режима работы с вк
+    'social_django.middleware.SocialAuthExceptionMiddleware',  # для продвинутого режима работы с вк
+    'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
 
 ROOT_URLCONF = 'geekshop.urls'
@@ -88,8 +93,8 @@ TEMPLATES = [
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
                 'mainapp.context_processors.basket',
-                'social_django.context_processors.backends', # для продвинутого режима работы с вк
-                'social_django.context_processors.login_redirect', # для продвинутого режима работы с вк
+                'social_django.context_processors.backends',  # для продвинутого режима работы с вк
+                'social_django.context_processors.login_redirect',  # для продвинутого режима работы с вк
             ],
         },
     },
@@ -119,6 +124,7 @@ WSGI_APPLICATION = 'geekshop.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/3.2/ref/settings/#databases
 
+# от сервака разработки
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
@@ -126,6 +132,14 @@ DATABASES = {
     }
 }
 
+# от сервака продакшн
+# DATABASES = {
+#     'default': {
+#         'NAME': 'geekshop',
+#         'ENGINE': 'django.db.backends.postgresql',
+#         'USER': 'postgres',
+#     }
+# }
 
 # Password validation
 # https://docs.djangoproject.com/en/3.2/ref/settings/#auth-password-validators
@@ -145,7 +159,6 @@ AUTH_PASSWORD_VALIDATORS = [
     },
 ]
 
-
 # Internationalization
 # https://docs.djangoproject.com/en/3.2/topics/i18n/
 
@@ -164,6 +177,7 @@ USE_TZ = False  # использовать или нет таймзону
 # https://docs.djangoproject.com/en/3.2/howto/static-files/
 
 STATIC_URL = '/static/'  # чтоб браузер нашёл статические файлы сервера
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 # ищет статику через файлы
 STATICFILES_DIRS = (
@@ -214,30 +228,11 @@ AUTHENTICATION_BACKENDS = (
 SOCIAL_AUTH_VK_OAUTH2_KEY = env('SOCIAL_AUTH_VK_OAUTH2_ID')
 SOCIAL_AUTH_VK_OAUTH2_SECRET = env('SOCIAL_AUTH_VK_OAUTH2_KEY')
 
-if os.name == 'posix':
-    CACHE_MIDDLEWARE_ALIAS = 'default'
-    CACHE_MIDDLEWARE_SECONDS = 120
-    CACHE_MIDDLEWARE_KEY_PREFIX = 'geekshop'
-    CACHES = {
-        'default': {
-            'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
-            'LOCATION': '127.0.0.1:11211',
-        }
-    }
-
-LOW_CACHE = False
-
-# если храним секретные данные в файле vk.json
-# SOCIAL_AUTH_VK_OAUTH2_KEY = VK['SOCIAL_AUTH_VK_OAUTH2_ID']
-# SOCIAL_AUTH_VK_OAUTH2_SECRET = VK['SOCIAL_AUTH_VK_OAUTH2_KEY']
-
-# если сипользуем env
-SOCIAL_AUTH_VK_OAUTH2_KEY = env('SOCIAL_AUTH_VK_OAUTH2_ID')
-SOCIAL_AUTH_VK_OAUTH2_SECRET = env('SOCIAL_AUTH_VK_OAUTH2_KEY')
-
 if DEBUG:
     def show_toolbar(request):
         return True
+
+
     DEBUG_TOOLBAR_CONFIG = {
         'SHOW_TOOLBAR_CALLBACK': show_toolbar,
     }
@@ -257,3 +252,16 @@ if DEBUG:
         'debug_toolbar.panels.profiling.ProfilingPanel',
         'template_profiler_panel.panels.template.TemplateProfilerPanel',
     ]
+
+if os.name == 'posix':
+    CACHE_MIDDLEWARE_ALIAS = 'default'
+    CACHE_MIDDLEWARE_SECONDS = 120
+    CACHE_MIDDLEWARE_KEY_PREFIX = 'geekshop'
+    CACHES = {
+        'default': {
+            'BACKEND': 'django.core.cache.backends.memcached.MemcachedCache',
+            'LOCATION': '127.0.0.1:11211',
+        }
+    }
+
+LOW_CACHE = True

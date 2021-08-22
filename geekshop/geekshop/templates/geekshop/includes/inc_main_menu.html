@@ -17,13 +17,12 @@
         {% if user.is_authenticated %}
             <li style="margin-top: -8px;">
                 <div class="dropdown">
-                   <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuButton1" data-bs-toggle="dropdown"
-                      aria-expanded="false">
-                       {{ user.username|default:'Пользователь' }}
-                       <span class="caret"></span>
-                   </a>
-                   <ul class="dropdown-menu">
-                       <li>
+                    <a class="nav-link dropdown-toggle" href="#" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                        admin
+                        <span class="caret"></span>
+                        </a>
+                    <ul class="dropdown-menu" style="">
+                        <li>
                            <a class="nav-link text-dark" href="{% url 'auth:edit' %}">
                                Профиль
                            </a>
@@ -46,12 +45,12 @@
             </li>
     </ul>
     <a href="#" class="search"></a>
-    <a href="{% url 'basket:view' %}" class="basket">
-        <span>
-            {% if basket %}
-              {{ basket.0.total_cost|floatformat:0 }} руб
-              ({{ basket.0.total_quantity }} шт)
-            {% endif %}
-        </span>
-    </a>
+{#    <a href="{% url 'basket:view' %}" class="basket">#}
+{#        <span>#}
+{#            {% if basket %}#}
+{#              {{ basket.0.total_cost|floatformat:0 }} руб#}
+{#              ({{ basket.0.total_quantity }} шт)#}
+{#            {% endif %}#}
+{#        </span>#}
+{#    </a>#}
 </div>
