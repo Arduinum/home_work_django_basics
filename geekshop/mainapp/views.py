@@ -98,6 +98,7 @@ def get_same_products(hot_product):
 
     return same_products
 
+
 def products(request, pk=None, page=1):
     title = 'продукты/каталог'
     # убираем ради своего контекстного процессора
@@ -107,7 +108,7 @@ def products(request, pk=None, page=1):
     same_products = get_same_products(hot_product)
 
     links_menu = get_links_menu()
-    products = get_products_orederd_by_price()
+    products = get_products_orederd_by_price()[:4]
 
     if pk is not None:
         if pk == 0:

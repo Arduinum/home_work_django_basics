@@ -37,7 +37,7 @@ SECRET_KEY = env('SECRET_KEY_VK') # получаем по имени перем�
 # SECURITY WARNING: don't run with debug turned on in production!
 # для разработки
 # на продкшн нужно выкл этого режима делать!
-DEBUG = True
+DEBUG = False
 
 # с любого ip
 ALLOWED_HOSTS = ['*']
